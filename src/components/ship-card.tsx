@@ -72,9 +72,17 @@ export const ShipCard: React.FC<{ ship: Ship }> = ({ ship }) => {
 					</div>
 				</div>
 
-				<p className="text-gray-400 text-sm line-clamp-3 group-hover:line-clamp-none transition-all duration-300">
-					{ship.description || "Описание отсутствует"}
-				</p>
+				<div className="relative h-[4.5rem]">
+					<p className="text-gray-400 text-sm line-clamp-3">
+						{ship.description || "Описание отсутствует"}
+					</p>
+
+					<div className="absolute inset-0 bg-gradient-to-br from-gray-800/95 to-gray-900/95 backdrop-blur-sm p-3 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none group-hover:pointer-events-auto z-10 border border-gray-600/50 shadow-lg max-h-[200px] overflow-y-auto">
+						<p className="text-gray-300 text-sm leading-relaxed">
+							{ship.description || "Описание отсутствует"}
+						</p>
+					</div>
+				</div>
 			</div>
 		</div>
 	);
